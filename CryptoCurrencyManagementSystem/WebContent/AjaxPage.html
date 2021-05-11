@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ajax View to search cryptoCurrency</title>
+<script language="JavaScript" type="text/javascript">
+	var xMLHttpRequest = new XMLHttpRequest();
+	function findCrypto(){
+		
+		xMLHttpRequest.open("Get", "/CryptoCurrencyManagementSystem/AjaxServlet?CryptoName="+document.getElementById("CryptoName").value, true);
+		xMLHttpRequest.onreadystatechange = processCryto;
+		xMLHttpRequest.send();
+	}
+	
+	function processCrypto() {
+		
+		if(xMLHttpRequest.readuState == 4 && xMLHttpRequest.status == 200) {
+			
+			var JSONTopicObject = eval('(' + xMLHttpRequest.responseText +')');
+			var table = document.getElementById("cryptoTable");
+			table.ineerHTML = "";
+			var headrow = table.insertRow(0);
+			var headcell = headrow.insertCell(0);
+			headcell.style.backgroundColor = "lightblue";
+			var name = JSONTopicObject.topic.tutorial;
+			var i = 0;
+			while(i < name.length) {
+				row = table.insertRow(i+1);
+				cell = row.insertCell(0);
+				cell.innerHTML = tutorials[i++].name;
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="CryptoName" size="20"/>
+	<button type="button" onclick='findCrypto()'>Find CryptoCurrency</button><br/>
+	<br><table id="cryptoTable" style="border:2px solid black"></table>
+</body>
+</html>

@@ -1,0 +1,193 @@
+@charset "ISO-8859-1";
+header{
+	background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(./resources/images/3.png);
+	height :100vh;
+	-webkit-backgroud-size: cover;
+	background-size: cover;
+	background-position: center center;
+}
+
+.banner-text{
+	position:absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.navbar-brand{
+	font-family: big john;
+}
+
+.nav-link{
+	font-family:poppins;
+	text-transform: uppercase;
+}
+
+.banner-text p{
+	font-family: poppins;
+	color: #fff;
+}
+
+.banner-btn a{
+	border: 1px solid #fff;
+	border-radius: 50px;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 10px 50px;
+	display: inline-block;
+	margin-top: 15px;
+	color: #fff;
+}
+
+.banner-btn a.active{
+	background: #fed136;
+	border-color: #fed136;
+	color: #000;
+}
+
+.text-area{
+	font-size : 15px;
+	font-family: roboto;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.text-area span{
+	color: #fed136;
+	opacity: 0;
+	transform: translate(0, -100px) rotate(360deg) scale(0);
+	animation: animate 5s forwards;
+}
+.text-area span{
+	font-size : 20px;
+	display: inline-block;
+}
+
+.text-area span:nth-of-type(2){
+	animation-delay: .1s;
+}
+
+.text-area span:nth-of-type(3){
+	animation-delay: .2s;
+}
+.text-area span:nth-of-type(4){
+	animation-delay: .3s;
+}
+.text-area span:nth-of-type(5){
+	animation-delay: .4s;
+}
+.text-area span:nth-of-type(6){
+	animation-delay: .5s;
+}
+.text-area span:nth-of-type(7){
+	animation-delay: .6s;
+}
+.text-area span:nth-of-type(8){
+	animation-delay: .7s;
+}
+.text-area span:nth-of-type(9){
+	animation-delay: .8s;
+}
+.text-area span:nth-of-type(10){
+	animation-delay: .9s;
+}
+
+.text-area span:nth-of-type(11){
+	animation-delay: .10s;
+}
+
+.text-area span:nth-of-type(12){
+	animation-delay: .11s;
+}
+
+.text-area span:nth-of-type(13){
+	animation-delay: .12s;
+}
+.text-area span:nth-of-type(14){
+	animation-delay: .13s;
+}
+.text-area span:nth-of-type(15){
+	animation-delay: .14s;
+}
+.text-area span:nth-of-type(16){
+	animation-delay: .15s;
+}
+.text-area span:nth-of-type(17){
+	animation-delay: .16s;
+}
+.text-area span:nth-of-type(18){
+	animation-delay: .17s;
+}
+.text-area span:nth-of-type(19){
+	animation-delay: .18s;
+}
+.text-area span:nth-of-type(20){
+	animation-delay: .19s;
+}
+
+.text-area span:nth-of-type(21){
+	animation-delay: .20s;
+}
+
+.text-area span:nth-of-type(22){
+	animation-delay: .21s;
+}
+
+.text-area span:nth-of-type(23){
+	animation-delay: .22s;
+}
+.text-area span:nth-of-type(24){
+	animation-delay: .23s;
+}
+.text-area span:nth-of-type(25){
+	animation-delay: .24s;
+}
+.text-area span:nth-of-type(26){
+	animation-delay: .25s;
+}
+.text-area span:nth-of-type(27){
+	animation-delay: .26s;
+}
+.text-area span:nth-of-type(28){
+	animation-delay: .27s;
+}
+.text-area span:nth-of-type(29){
+	animation-delay: .28s;
+}
+.text-area span:nth-of-type(30){
+	animation-delay: .29s;
+}
+.text-area span:nth-of-type(31){
+	animation-delay: .30s;
+}
+
+@keyframes animate{
+	30%{
+		transform : translate(0, -50px) rotate(180deg) scale(1);
+	}
+	
+	60%{
+		transform : translate(0, 00px) rotate(0deg) scale(1);
+	}
+	
+	100%{
+		transform : translate(0) rotate(0deg) scale(1);
+		opacity: 1;
+	}
+	
+}
+
+@media (max-width: 500px)
+{
+	.banner-text p{
+		display: none;
+	}
+	
+	.navbar-dark{
+	background-color: #333;
+	}
+	
+	.text-area{
+		font-size: 35px;
+	}
+}

@@ -1,0 +1,22 @@
+@charset "ISO-8859-1";
+body {
+    background-color:cyan;
+    font-family: 'Roboto', sans-serif;
+}
+div{
+	margin:100px;
+}
+div h2{
+	/* color:#ffffff; */
+	color:black;
+	font-size:2em;
+}
+div a{
+	color:white;
+}
+div a:visited{
+	color:white;
+}
+div a:hover{
+	color:#0000ff;
+}

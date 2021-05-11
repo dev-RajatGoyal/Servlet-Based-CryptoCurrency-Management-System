@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <display-name>CryptoCurrencyManagementSystem</display-name>
+  <welcome-file-list>
+    <welcome-file>Home.html</welcome-file>
+  </welcome-file-list>
+  
+   <context-param>
+    <param-name>log4j-config-location</param-name>
+    <param-value>WEB-INF/log4j.properties</param-value>
+  </context-param>
+  
+ 
+   <!-- Invest Logger -->
+  <listener>
+  	<listener-class>com.root.logger.ContextListner</listener-class>
+  </listener>
+  
+  <!--  Servlet mapping for Registering new Client-->
+  <servlet>
+  	<servlet-name>ClientRegister</servlet-name>
+  	<servlet-class>com.root.controller.ClientRegister</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>ClientRegister</servlet-name>
+  	<url-pattern>/registerClient</url-pattern>
+  </servlet-mapping>
+  
+   <!--  Servlet mapping for showing all client details-->
+  <servlet>
+  	<servlet-name>ShowAllClients</servlet-name>
+  	<servlet-class>com.root.controller.ShowAllClients</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>ShowAllClients</servlet-name>
+  	<url-pattern>/showAllClients</url-pattern>
+  </servlet-mapping>
+  
+   <!--  Servlet mapping for validating client credentials-->
+  <servlet>
+  	<servlet-name>ClientLogin</servlet-name>
+  	<servlet-class>com.root.controller.ClientLogin</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>ClientLogin</servlet-name>
+  	<url-pattern>/clientlogin</url-pattern>
+  </servlet-mapping>
+  
+ <!--  Servlet mapping for showing client Balance-->
+  <servlet>
+ 	<servlet-name>ClientShowBalance</servlet-name>
+ 	<servlet-class>com.root.controller.ClientShowBalance</servlet-class>
+ </servlet>
+ 
+ <servlet-mapping>
+ 	<servlet-name>ClientShowBalance</servlet-name>
+	<url-pattern>/ClientShowBalance</url-pattern>
+ </servlet-mapping> 
+ 
+ <!--  Servlet mapping for validating admin credentials-->
+  <servlet>
+  	<servlet-name>AdminLogin</servlet-name>
+  	<servlet-class>com.root.controller.AdminLogin</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>AdminLogin</servlet-name>
+  	<url-pattern>/adminLogin</url-pattern>
+  </servlet-mapping>
+  
+  <!--  Servlet mapping for adding cryptoCurrency-->
+  <servlet>
+  	<servlet-name>AddCryptoCurrency</servlet-name>
+  	<servlet-class>com.root.controller.AddCryptoCurrency</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>AddCryptoCurrency</servlet-name>
+  	<url-pattern>/addCrypto</url-pattern>
+  </servlet-mapping>
+  
+  <!--  Servlet mapping for showing all cryptoCurrency details-->
+  <servlet>
+  	<servlet-name>ShowAllCryptoCurrency</servlet-name>
+  	<servlet-class>com.root.controller.ShowAllCryptoCurrency</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>ShowAllCryptoCurrency</servlet-name>
+  	<url-pattern>/showAllCryptos</url-pattern>
+  </servlet-mapping>
+  
+  <!--  Servlet mapping to delete client-->
+  <servlet>
+  	<servlet-name>DeleteClient</servlet-name>
+  	<servlet-class>com.root.controller.DeleteClient</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>DeleteClient</servlet-name>
+  	<url-pattern>/deleteClient</url-pattern>
+  </servlet-mapping>
+  
+   <!--  Servlet mapping to delete cryptoCurrency-->
+  <servlet>
+  	<servlet-name>DeleteCryptoCurrency</servlet-name>
+  	<servlet-class>com.root.controller.DeleteCryptoCurrency</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>DeleteCryptoCurrency</servlet-name>
+  	<url-pattern>/deleteCrypto</url-pattern>
+  </servlet-mapping>
+  
+  
+   <!--  Servlet mapping to client DashBoard-->
+  <servlet>
+  	<servlet-name>ClientDashBoard</servlet-name>
+  	<servlet-class>com.root.controller.ClientDashBoard</servlet-class>
+  </servlet>
+  
+    <servlet-mapping>
+  	<servlet-name>ClientDashBoard</servlet-name>
+  	<url-pattern>/ClientDashBoard</url-pattern>
+  </servlet-mapping>
+  
+  
+  <!--  Servlet mapping for showing all cryptoCurrency details-->
+  <servlet>
+  	<servlet-name>InvestSellCrypto</servlet-name>
+  	<servlet-class>com.root.controller.InvestSellCrypto</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>InvestSellCrypto</servlet-name>
+  	<url-pattern>/InvestSell</url-pattern>
+  </servlet-mapping>
+  
+
+  
+  <!--  Servlet mapping for invest in  cryptoCurrency -->
+  <servlet>
+  	<servlet-name>Investment</servlet-name>
+  	<servlet-class>com.root.controller.Investment</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>Investment</servlet-name>
+  	<url-pattern>/Investment</url-pattern>
+  </servlet-mapping>
+  
+   <!--  Servlet mapping for invest in  cryptoCurrency -->
+  <servlet>
+  	<servlet-name>Invest</servlet-name>
+  	<servlet-class>com.root.controller.Invest</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>Invest</servlet-name>
+  	<url-pattern>/invest</url-pattern>
+  </servlet-mapping>
+  
+  <!--  Servlet mapping to sell  cryptoCurrency -->
+  <servlet>
+  	<servlet-name>SellCrypto</servlet-name>
+  	<servlet-class>com.root.controller.SellCrypto</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>SellCrypto</servlet-name>
+  	<url-pattern>/SellCrypto</url-pattern>
+  </servlet-mapping>
+  
+  <!--  Servlet mapping to sell  cryptoCurrency -->
+  <servlet>
+  	<servlet-name>Sell</servlet-name>
+  	<servlet-class>com.root.controller.Sell</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>Sell</servlet-name>
+  	<url-pattern>/sell</url-pattern>
+  </servlet-mapping>
+  
+  <!--  Servlet mapping for updating client details-->
+  <servlet>
+  	<servlet-name>UpdateClient</servlet-name>
+  	<servlet-class>com.root.controller.UpdateClient</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>UpdateClient</servlet-name>
+  	<url-pattern>/updateClient</url-pattern>
+  </servlet-mapping>
+  
+  
+    <servlet>
+  	<servlet-name>AjaxServlet</servlet-name>
+  	<servlet-class>com.root.controller.AjaxServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>AjaxServlet</servlet-name>
+  	<url-pattern>/AjaxServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
