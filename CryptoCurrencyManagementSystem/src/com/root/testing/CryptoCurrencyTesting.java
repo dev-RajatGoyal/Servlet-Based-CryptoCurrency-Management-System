@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import org.junit.Test;
+import org.junit.jupiter.api.Order;
 
 import com.root.model.CryptoCurrencyModel;
 import com.root.service.CryptoCurrencyService;
@@ -18,33 +19,37 @@ public class CryptoCurrencyTesting {
 
 	static CryptoCurrencyModel crypto = new CryptoCurrencyModel();
 	{
-		crypto.setCryptoId(106);
+		crypto.setCryptoId(105);
 		crypto.setCryptoName("Nifty50");
 		crypto.setCryptoPrice(250);
 	}
 
 
-	@Test
-	public void AddingCryptoCurrencySuccessful() throws ClassNotFoundException, SQLException {
-		cryptoService = new CryptoCurrencyServiceIMPL();
-
-		int actual = cryptoService.addCryptoCurrency(crypto);
-		int expected = 1;
-
-		assertEquals(expected, actual);
-	}
+//	@Test
+//	@Order(1)
+//	public void AddingCryptoCurrencySuccessful() throws ClassNotFoundException, SQLException {
+//		cryptoService = new CryptoCurrencyServiceIMPL();
+//
+//		int actual = cryptoService.addCryptoCurrency(crypto);
+//		int expected = 1;
+//
+//		assertEquals(expected, actual);
+//	}
 
 	@Test 
+	@Order(2)
 	public void ViewCryptoSuccessful() throws ClassNotFoundException, SQLException { 
 		cryptoService = new CryptoCurrencyServiceIMPL();
-		CryptoCurrencyModel cryptoCurrency = cryptoService.viewCrypto("Nifty50");
+		CryptoCurrencyModel cryptoCurrency = cryptoService.viewCrypto("BitCoin");
 	  
 		String actual = cryptoCurrency.getCryptoName(); 
-		String expected = crypto.getCryptoName();
+		String expected = "BitCoin";
 		assertEquals(expected,actual); 
 	}
 	 
-	@Test public void ReadCryptoCurrencySuccess() throws ClassNotFoundException,SQLException { 
+	@Test 
+	@Order(3)
+	public void ReadCryptoCurrencySuccess() throws ClassNotFoundException,SQLException { 
 		cryptoService = new CryptoCurrencyServiceIMPL();
 		ArrayList<CryptoCurrencyModel> cryptos = (ArrayList<CryptoCurrencyModel>)cryptoService.readCryptoCurrency();
 	    //int id = ; 
@@ -53,7 +58,7 @@ public class CryptoCurrencyTesting {
 	   
 	    for(CryptoCurrencyModel cryptoNew : cryptos) 
 	    { 
-	    	if(crypto.getCryptoName().equals(cryptoNew.getCryptoName())) 
+	    	if("BitCoin".equals(cryptoNew.getCryptoName())) 
 	    	{
 	    		actual = 1; 
 	    	}
@@ -61,13 +66,15 @@ public class CryptoCurrencyTesting {
 	    assertEquals(expected,actual); 
 	  }
 	
-//	
+	//'106', 'Share', '250'
+
 //	@Test 
+//	@Order(4)
 //	public void deleteCryptoSuccessful() throws ClassNotFoundException, SQLException 
 //	{ 
 //		cryptoService = new CryptoCurrencyServiceIMPL(); 
-//		int actual = cryptoService.deleteCryptoCurrency(crypto.getCryptoName()); 
-//		int expected = 0;
+//		int actual = cryptoService.deleteCryptoCurrency("Share"); 
+//		int expected = 1;
 //		assertEquals(expected,actual); 
 //	}
 	 
@@ -75,6 +82,7 @@ public class CryptoCurrencyTesting {
 
 
 	@Test 
+	@Order(5)
 	public void ViewCryptoFailed() throws ClassNotFoundException, SQLException { 
 		cryptoService = new CryptoCurrencyServiceIMPL();
 		CryptoCurrencyModel cryptoCurrency = cryptoService.viewCrypto("Coin");
@@ -84,22 +92,24 @@ public class CryptoCurrencyTesting {
 		assertNotEquals("Coins","Coin"); 
 	}
 	
-	@Test public void ReadCryptoCurrencyFailed() throws ClassNotFoundException,SQLException { 
-		cryptoService = new CryptoCurrencyServiceIMPL();
-		ArrayList<CryptoCurrencyModel> cryptos = (ArrayList<CryptoCurrencyModel>)cryptoService.readCryptoCurrency();
-	    //int id = ; 
-	    int actual = 0;
-	    int expected = 1;
-	   
-	    for(CryptoCurrencyModel cryptoNew : cryptos) 
-	    { 
-	    	if(crypto.getCryptoId()==cryptoNew.getCryptoId()) 
-	    	{
-	    		actual = 1; 
-	    	}
-	    }
-	    assertNotEquals(expected,actual); 
-	  }
+//	@Test 
+//	@Order(6)
+//	public void ReadCryptoCurrencyFailed() throws ClassNotFoundException,SQLException { 
+//		cryptoService = new CryptoCurrencyServiceIMPL();
+//		ArrayList<CryptoCurrencyModel> cryptos = (ArrayList<CryptoCurrencyModel>)cryptoService.readCryptoCurrency();
+//	    //int id = ; 
+//	    int actual = 0;
+//	    int expected = 0;
+//	   
+//	    for(CryptoCurrencyModel cryptoNew : cryptos) 
+//	    { 
+//	    	if(crypto.getCryptoId()==cryptoNew.getCryptoId()) 
+//	    	{
+//	    		actual = 1; 
+//	    	}
+//	    }
+//	    assertNotEquals(expected,actual); 
+//	  }
 	
 //	
 //	@Test 
