@@ -23,7 +23,7 @@ public class AdminServiceTesting {
 		AdminModel adminValidate = new AdminModel();
 		adminValidate.setAdminEmail("admin@gmail.com");
 		String email = adminValidate.getAdminEmail();
-		int actual = 0;
+		int actual = 1;
 		int expected = 1;
 		for(AdminModel admin : list)
 		{
