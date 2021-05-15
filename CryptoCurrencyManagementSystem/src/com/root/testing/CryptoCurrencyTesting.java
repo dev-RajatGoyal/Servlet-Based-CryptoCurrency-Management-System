@@ -25,16 +25,16 @@ public class CryptoCurrencyTesting {
 	}
 
 
-//	@Test
-//	@Order(1)
-//	public void AddingCryptoCurrencySuccessful() throws ClassNotFoundException, SQLException {
-//		cryptoService = new CryptoCurrencyServiceIMPL();
-//
-//		int actual = cryptoService.addCryptoCurrency(crypto);
-//		int expected = 1;
-//
-//		assertEquals(expected, actual);
-//	}
+	@Test
+	@Order(1)
+	public void AddingCryptoCurrencySuccessful() throws ClassNotFoundException, SQLException {
+		cryptoService = new CryptoCurrencyServiceIMPL();
+
+		int actual = cryptoService.addCryptoCurrency(crypto);
+		int expected = 1;
+
+		assertEquals(expected, actual);
+	}
 
 	@Test 
 	@Order(2)
@@ -68,15 +68,15 @@ public class CryptoCurrencyTesting {
 	
 	//'106', 'Share', '250'
 
-//	@Test 
-//	@Order(4)
-//	public void deleteCryptoSuccessful() throws ClassNotFoundException, SQLException 
-//	{ 
-//		cryptoService = new CryptoCurrencyServiceIMPL(); 
-//		int actual = cryptoService.deleteCryptoCurrency("Share"); 
-//		int expected = 1;
-//		assertEquals(expected,actual); 
-//	}
+	@Test 
+	@Order(4)
+	public void deleteCryptoSuccessful() throws ClassNotFoundException, SQLException 
+	{ 
+		cryptoService = new CryptoCurrencyServiceIMPL(); 
+		int actual = cryptoService.deleteCryptoCurrency("Share"); 
+		int expected = 1;
+		assertEquals(expected,actual); 
+	}
 	 
 //Negative TestCases******************************************************************************
 
@@ -92,33 +92,34 @@ public class CryptoCurrencyTesting {
 		assertNotEquals("Coins","Coin"); 
 	}
 	
-//	@Test 
-//	@Order(6)
-//	public void ReadCryptoCurrencyFailed() throws ClassNotFoundException,SQLException { 
-//		cryptoService = new CryptoCurrencyServiceIMPL();
-//		ArrayList<CryptoCurrencyModel> cryptos = (ArrayList<CryptoCurrencyModel>)cryptoService.readCryptoCurrency();
-//	    //int id = ; 
-//	    int actual = 0;
-//	    int expected = 0;
-//	   
-//	    for(CryptoCurrencyModel cryptoNew : cryptos) 
-//	    { 
-//	    	if(crypto.getCryptoId()==cryptoNew.getCryptoId()) 
-//	    	{
-//	    		actual = 1; 
-//	    	}
-//	    }
-//	    assertNotEquals(expected,actual); 
-//	  }
+	@Test 
+	@Order(6)
+	public void ReadCryptoCurrencyFailed() throws ClassNotFoundException,SQLException { 
+		cryptoService = new CryptoCurrencyServiceIMPL();
+		ArrayList<CryptoCurrencyModel> cryptos = (ArrayList<CryptoCurrencyModel>)cryptoService.readCryptoCurrency();
+	    //int id = ; 
+	    int actual = 0;
+	    int expected = 0;
+	   
+	    for(CryptoCurrencyModel cryptoNew : cryptos) 
+	    { 
+	    	if(crypto.getCryptoId()==cryptoNew.getCryptoId()) 
+	    	{
+	    		actual = 1; 
+	    	}
+	    }
+	    assertNotEquals(expected,actual); 
+	  }
 	
-//	
-//	@Test 
-//	public void deleteCryptoFailed() throws ClassNotFoundException, SQLException 
-//	{ 
-//		cryptoService = new CryptoCurrencyServiceIMPL(); 
-//		int actual = cryptoService.deleteCryptoCurrency(crypto.getCryptoName()); 
-//		int expected = 1;
-//		assertNotEquals(expected,actual); 
-//	}
-//	 
+	
+	@Test 
+	@Order(7)
+	public void deleteCryptoFailed() throws ClassNotFoundException, SQLException 
+	{ 
+		cryptoService = new CryptoCurrencyServiceIMPL(); 
+		int actual = cryptoService.deleteCryptoCurrency(crypto.getCryptoName()); 
+		int expected = 1;
+		assertNotEquals(expected,actual); 
+	}
+	 
 }
